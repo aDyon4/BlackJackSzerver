@@ -7,14 +7,14 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bjszerver.HelloController">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bjszerver.HelloController">
     <children>
         <StackPane prefHeight="150.0" prefWidth="200.0">
             <children>
                 <Arc fill="#186f11" length="180.0" radiusX="500.0" radiusY="450.0" stroke="#654343" strokeType="INSIDE" type="ROUND" />
                 <ImageView fitHeight="183.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="-120.0">
                     <image>
-                        <Image url="@lapok/2H.png" />
+                        <Image url="@gray_back.png" />
                     </image>
                 </ImageView>
                 <Label fx:id="f" prefWidth="120.0" text="Tét: ">
@@ -27,7 +27,7 @@
                 </Label>
                 <ImageView fitHeight="183.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="120.0">
                     <image>
-                        <Image url="@lapok/8D.png" />
+                        <Image url="@gray_back.png" />
                     </image>
                 </ImageView>
             </children>

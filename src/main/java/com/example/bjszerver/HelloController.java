@@ -28,7 +28,7 @@ public class HelloController {
 
     public void initialize(){
         try {
-            socket = new DatagramSocket(678);
+            socket = new DatagramSocket(688);
         } catch (SocketException e) {
             e.printStackTrace();
         }
@@ -59,24 +59,35 @@ public class HelloController {
             }
         }
     }
-
+    int KliensOsszeg = 0;
+    int KliensTet = 0;
     private void onFogad(String uzenet, String ip, int port) {
         String[] s = uzenet.split(":");
 
         if (s[0].equals("join")) {
             String osszeg = s[1];
+            KliensOsszeg = Integer.parseInt(osszeg);
             f.setText("Összeg: " + s[1]);
-            kuld("joined:"+s[1], ip, port);
+            kuld("joined:"+s[1]+"\n", ip, port);
 
         }
         else if(s[0].equals("bet")){
+
             System.out.printf("bet:%s", s[1]);
-            String tet = s[1];
+            int tet = Integer.parseInt(s[1]);
+
+            KliensTet = tet;
+            KliensOsszeg = KliensOsszeg - tet;
         }
-        else if(s[0].equals("exit")){
+        else if(s[0].equals("plus")){
+            System.out.printf("plus:%s", s[1]);
+            int plusTet = Integer.parseInt(s[1]);
+            KliensOsszeg = KliensOsszeg - plusTet;
+        }
+        else if(uzenet.equals("exit")){
             System.out.println("exit");
             f.setText("KILÉPETT");
-            kuld("paid:", ip, port);
+            kuld("paid:"+KliensOsszeg+"\n", ip, port);
         }
     }
 
