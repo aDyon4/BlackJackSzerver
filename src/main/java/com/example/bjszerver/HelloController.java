@@ -73,7 +73,7 @@ public class HelloController {
         }
         else if(s[0].equals("bet")){
 
-            System.out.printf("bet:%s", s[1]);
+            System.out.printf("bet:%s\n", s[1]);
             int tet = Integer.parseInt(s[1]);
 
             KliensTet = tet;
@@ -87,7 +87,7 @@ public class HelloController {
         else if(uzenet.equals("exit")){
             System.out.println("exit");
             f.setText("KILÉPETT");
-            kuld("paid:"+KliensOsszeg+"\n", ip, port);
+            kuld("paid:"+KliensOsszeg, ip, port);
         }
     }
 
