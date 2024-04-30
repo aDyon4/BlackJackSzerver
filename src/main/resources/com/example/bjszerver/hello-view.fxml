@@ -7,124 +7,30 @@
 <?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
-<VBox alignment="CENTER" maxWidth="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.iskolabjkliens.HelloController">
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bjszerver.HelloController">
     <children>
-        <StackPane maxWidth="1.7976931348623157E308">
+        <StackPane prefHeight="150.0" prefWidth="200.0">
             <children>
-                <Arc fill="#186f11" length="180.0" radiusX="500.0" radiusY="450.0" startAngle="180.0" stroke="#654343" strokeType="INSIDE" type="ROUND" />
-                <Label prefHeight="183.0" prefWidth="120.0" style="-fx-border-color: #14570e; -fx-border-radius: 7;" translateY="120.0" />
+                <Arc fill="#186f11" length="180.0" radiusX="500.0" radiusY="450.0" stroke="#654343" strokeType="INSIDE" type="ROUND" />
                 <ImageView fitHeight="183.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="-120.0">
                     <image>
-                        <!-- <Image url="@lapok/back.png" /> -->
+                        <Image url="@gray_back.png" />
                     </image>
                 </ImageView>
-                <ImageView fx:id="ivLap" fitHeight="183.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="120.0" />
-                <Pane fx:id="pnLapok" maxHeight="183.0" maxWidth="240.0" prefHeight="183.0" prefWidth="240.0" translateY="120.0" />
-            <Label fx:id="lbOsszeg" alignment="TOP_LEFT" text="Összeg" translateX="465.0" translateY="-205.0" />
-                <Button fx:id="exit" alignment="TOP_RIGHT" contentDisplay="TOP" mnemonicParsing="false" onAction="#onExitClick" style="-fx-background-color: red; -fx-font-weight: bold;" text="Kilépés" textFill="WHITE" translateX="-465.0" translateY="-205.0" />
+                <Label fx:id="f" prefWidth="120.0" text="Tét: ">
+                    <font>
+                        <Font name="Consolas Bold" size="16.0" />
+                    </font>
+                    <StackPane.margin>
+                        <Insets top="-30.0" />
+                    </StackPane.margin>
+                </Label>
+                <ImageView fitHeight="183.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true" translateY="120.0">
+                    <image>
+                        <Image url="@gray_back.png" />
+                    </image>
+                </ImageView>
             </children>
         </StackPane>
-        <Label fx:id="lbPont" alignment="CENTER" contentDisplay="CENTER" text="00">
-            <font>
-                <Font name="Arial" size="24.0" />
-            </font>
-        </Label>
-        <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0" spacing="20.0">
-            <children>
-                <Label fx:id="lbOt" onMousePressed="#onOtPressed">
-                    <graphic>
-                        <ImageView fitHeight="100.0" fitWidth="120.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@ikonok/chip5.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Label>
-                <Label fx:id="lbHuszonot" onMousePressed="#onHuszonotPressed">
-                    <graphic>
-                        <ImageView fitHeight="140.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@ikonok/chip25.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Label>
-                <Label fx:id="lbOtven" onMousePressed="#onOtvenPressed">
-                    <graphic>
-                        <ImageView fitHeight="150.0" fitWidth="110.0" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@ikonok/chip50.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Label>
-                <Label fx:id="lbSzaz" onMousePressed="#onSzazPressed">
-                    <graphic>
-                        <ImageView fitHeight="110.0" fitWidth="110.0" onMousePressed="#onSzazPressed" pickOnBounds="true" preserveRatio="true">
-                            <image>
-                                <Image url="@ikonok/chip100.png" />
-                            </image>
-                        </ImageView>
-                    </graphic>
-                </Label>
-            </children></HBox>
-        <Label fx:id="lbTet" text="0" />
-        <HBox prefHeight="100.0" prefWidth="200.0">
-            <children>
-                <VBox alignment="TOP_CENTER" maxWidth="120.0" prefWidth="120.0" spacing="10.0">
-                    <children>
-                        <Button fx:id="bet" maxHeight="25.0" mnemonicParsing="false" onAction="#onBetClick" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: lightblue; -fx-font-weight: bold;" text="OSZTÁS" />
-                    </children>
-                    <HBox.margin>
-                        <Insets left="200.0" />
-                    </HBox.margin>
-                </VBox>
-                <Label prefWidth="400.0" />
-                <VBox maxWidth="120.0" prefWidth="120.0">
-                    <children>
-                        <Button fx:id="join" maxHeight="25.0" mnemonicParsing="false" onAction="#onClickPressed" prefHeight="25.0" prefWidth="140.0" style="-fx-background-color: green; -fx-font-weight: bold;" text="Játék" textFill="WHITE">
-                            <font>
-                                <Font size="15.0" />
-                            </font>
-                            <VBox.margin>
-                                <Insets bottom="10.0" />
-                            </VBox.margin>
-                        </Button>
-                        <TextField fx:id="tfId" alignment="CENTER" maxWidth="120.0" prefHeight="25.0" prefWidth="120.0" text="10.201.2.5" />
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
-        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
-            <children>
-                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Label fx:id="lbStand" onMousePressed="#onStandPressed" textFill="WHITE">
-                            <graphic>
-                                <ImageView disable="true" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@ikonok/stand.png" />
-                           </image></ImageView>
-                            </graphic>
-                        </Label>
-                        <Label text="STAND" />
-                    </children>
-                </VBox>
-                <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0">
-                    <children>
-                        <Label fx:id="lbHit" onMousePressed="#onHitPressed">
-                            <graphic>
-                                <ImageView disable="true" fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@ikonok/plus.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
-                        </Label>
-                        <Label text="HIT" />
-                    </children>
-                </VBox>
-            </children>
-        </HBox>
     </children>
 </VBox>
